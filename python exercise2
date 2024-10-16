@@ -1,0 +1,59 @@
+# Print the item 'Orange' from the list of fruits given below.
+fruits = ['Apple', 'Grapes', 'Orange', 'Pineapple', 'Watermelon']
+print(fruits[2])
+print(fruits[-3])
+# Ans 
+Orange
+
+# We have a list of fruits and a string given below. Since the string contains fruit, add that string to the given list and print that new list.
+
+fruit_list = ['Apple', 'Grapes', 'Orange', 'Pineapple', 'Watermelon']
+fruit_string = 'Mango'
+print(fruit_list+[fruit_string])
+# Ans 
+['Apple', 'Grapes', 'Orange', 'Pineapple', 'Watermelon', 'Mango']
+
+# There is a list given below which contains the name of cities. Repeat this list of cities three times, and print the old list and the new list.
+cityList = ['London', 'New York', 'Delhi']
+print("Old City List: " + str(cityList))
+print("New City List: "+ str(cityList * 3))
+# Ans 
+Old City List: ['London', 'New York', 'Delhi']
+New City List: ['London', 'New York', 'Delhi', 'London', 'New York', 'Delhi', 'London', 'New York', 'Delhi']
+
+# Check if the city 'Delhi' is present in the list of cities given below.
+city = 'Delhi'
+cityList = ['London', 'New York', 'Delhi', 'Mumbai', 'Paris']
+print(city in cityList)
+# Ans True
+# Reverse the string given below.
+name = 'Learning Journal'
+print(name[::-1])
+print(name[-1::-1])
+# Ans lanruoJ gninraeL
+
+# There is a string object given below. Print the word 'sunny' from string 'msg'
+msg = 'A bright sunny day'
+print(msg[msg.index('sunny'):msg.index('sunny')+5])
+# Ans sunny
+
+# Check if the cities 'New York' and 'Delhi' are present in the list of cities given below.
+city1= 'Delhi'
+city2= 'New York'
+cityList = ['London', 'New York', 'Delhi', 'Mumbai', 'Paris']
+print(city1 in cityList and city2 in cityList)
+# Ans True
+
+# Using the slicing operation, remove the whitespaces between the letters and print the string once again.
+name = 'P y t h o n'
+print(name[::2])
+Python
+# Print the index of the letter 'h' from the string given below.
+name = 'Python'
+print(name.index('h'))
+# Ans 3
+
+# Print the odd indexed elements from the list of colors given below.
+myList = ['Red', 'Blue', 'Orange', 'White', 'Black', 'Yellow']
+print(myList[1::2])
+# Ans ['Blue', 'White', 'Yellow']
