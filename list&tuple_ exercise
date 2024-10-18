@@ -1,0 +1,60 @@
+# Convert the string given below into a list by taking each word separated by a comma as an element
+languages = 'Java, Python, C++, Scala, C'
+print(languages.split(','))
+
+# We have a list of numbers given below. Add the element '10' at the 3rd position of the list and finally print the list.
+num_list = [5, 6, 8, 7, 9]
+num_list.insert(3, '10')
+print(num_list)
+
+# Print all the multiples of 3 between 5 and 25
+
+for x in range(5, 25):
+    if x%3==0:
+        print(x)
+
+# We have a list of numbers given below. Print the square of these numbers into another list using list comprehension.
+num = [2, 4, 6, 8]
+n=[]
+for nu in num:
+    n.append(nu**2)
+print(n)
+# list comprehension
+n= [nu**2 for nu in num]
+print (n)
+
+# Print the first 10 natural numbers.
+for i in range (11):
+    print(i)
+
+# We have a tuple of numbers given below. Remove the largest number from the tuple and print it in sorted order.
+num_tuple = (5, 8, 13, 2, 17, 1)
+n= max(num_tuple)
+my_list= list(num_tuple)
+my_list.remove(n)
+my_list.sort()
+print(my_list)
+
+# Convert the list given below into a string using a comma as a separator argument.
+myList = ['Lenovo', ' Dell', ' Acer', ' Asus', ' HP']
+my_str = ','.join(myList)
+print(my_str)
+
+# Print all the even numbers between -10 and 0.
+num = -10
+for n in range(-10,1,2):
+    print(n)
+
+# Reverse the integer given below.
+rev_num=0
+n = 5623
+while (n>0):
+    r= n%10
+    rev_num= (rev_num*10)+r
+    n=n//10
+print(rev_num)
+
+# We have a list of numbers given below. Print the number, square of the number, and the cube of the number, all in a single list.
+num = [2, 4, 6, 8]
+num_list= [(x,x**2, x**3) for x in num]
+print(num_list)
