@@ -1,0 +1,90 @@
+# Print the following tuple in reverse order.
+tuple_1 = (22, 65, 12, 54)
+print(tuple_1[::-1])
+####  Output: (54, 12, 65, 22)
+
+# Access the name 'David' from the list given below.
+myList = [(2, 14, 'David'), [2, 7], 'Shaun']
+print(myList[0][2])
+#####  Output: 'David'
+
+# We have a set and a dictionary given below. Print the set once again after adding the keys of the dictionary to the set. 
+# The order of the expected output may vary as it is a set.
+mySet = {2, 4, 6}
+myDict = {'A':'John', 'B':'Emma', 'C':'Sam'}
+set1= set(myDict.keys())
+print(mySet.union(set1))
+#####  Output: {'A', 2, 4, 6,  'C', 'B'}
+
+# We have two sets given below. Print all the items from these sets after removing the duplicates.\n",
+set_1 = {2, 4, 6, 8}
+set_2 = {6, 8, 10, 12}
+print(set_1.union(set_2))
+#### Output: {2, 4, 6, 8, 10, 12}
+
+# Write a Python program to print the first and the last second of the day.
+#### Output:
+# First Second:  00:00:00
+# Last Second:  23:59:59.999999
+from datetime import *
+print(f'First Second: {time.min}')
+print(f'Last Second: {time.max}')
+
+# Print the total number of digits in the number given below.
+num = 8842
+#### Output: Total digits are:  4
+cnt= 0
+while num>0:
+    num =num//10
+    cnt+=1
+print(f'Total digits are: {cnt}')
+
+# We have a list of lists that contains several numbers. I want you to print the list whose sum of elements is the highest and also the lowest.
+num_list = [[2, 8, 11], [4, 5, 7, 12], [8, 9, 10, 11], [19, 13, 7], [2, 5, 16]]
+sum=0
+dictn={}
+lst=[]
+for n in num_list:
+    for n1 in n:
+        sum=sum+n1
+    dictn[sum]=n
+print(f'The list with the maximum sum of elements:  {dictn[max(dictn.keys())]}')   
+print(f'The list with the minimum sum of elements:  {dictn[min(dictn.keys())]}')
+#### Output: The list with the maximum sum of elements:  [19, 13, 7]
+# The list with the minimum sum of elements:  [2, 8, 11]
+
+# We have a string that contains the names of different fruits. 
+# I want you to convert this string into multiple substrings where each substring includes one fruit's name.
+fruits_string = " Apple, Banana, Mango, Kiwi, Guava, Grapes, Pomegranate, Orange, Watermelon"
+fruits_list= fruits_string.split()
+for fruit in fruits_list:
+    print(fruit)
+
+####  Output:
+# Apple 
+# Banana
+# Mango
+# Kiwi
+# Guava
+# Grapes
+# Pomegranate
+# Orange
+# Watermelon
+
+# Write a program to reverse words in a string.
+sample_text = "Python is a high-level and general-purpose programming language"
+sample_lst=sample_text.split()
+sample_lst= sample_lst[::-1]
+smpl_txt=''
+for lst in sample_lst:
+    smpl_txt=smpl_txt + ' ' + lst
+print(smpl_txt)
+#### Output: language programming general-purpose and high-level a is Python
+
+# Given below is the height (in cm) of the top 10 students in a class. Print the heights of the top 3 students from the given list.
+heights = [177, 160, 171, 163, 168,  175, 176, 183, 162, 170]
+ht=[]
+heights.sort(reverse=True)
+print(heights[0:3])
+
+####  Output: Top Three Heights:  [183, 177, 176]
