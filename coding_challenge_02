@@ -1,0 +1,131 @@
+# We have two lists of numbers given below. I want you to create a third list by picking an odd-indexed element from the first list 
+# and even-indexed elements from the second list.
+list_1 = [5, 10, 15, 20, 25, 30, 35]
+list_2 = [7, 14, 21, 28, 35, 42, 49]
+ht=[]
+for i in list_1:
+    if((list_1.index(i)%2)!=0):
+        ht.append(i)
+for j in list_2:
+     if((list_2.index(j)%2)==0):
+         ht.append(j)
+print(ht)
+#### Output: [10, 20, 30, 7, 21, 35, 49]
+
+# You have two dictionaries, with each of them containing several letters associated with certain values. 
+# I want you to perform the below-mentioned operations on these dictionaries:
+# t1. Print out the letters which are common to both these dictionaries.
+# t2. Print out the (key, value) pair, which is common to both these dictionaries.
+# t3. Print out all the letters which have occurred only once in these dictionaries.
+# t4. Print out the letters in num_1 that are not present in num_2.
+# t5. Print out a new dictionary num_3, which contains unique letters of num_1 from the previous output with their associated values.
+num_1 = {'a' : 5,
+        's' : 7,
+        'x' : 11,
+        'm' : 12,
+        'o' : 8}
+num_2 = {'r' : 12,
+        'x' : 9,
+        'n' : 8,
+        'm' : 12,
+        'q' : 10}
+print(num_1.keys() & num_2.keys())
+print({k: num_1[k] for k in num_1 if k in num_2 and num_1[k] == num_2[k]})
+print({k for k in num_1 if k not in num_2}.union({k for k in num_2 if k not in num_1}))
+print({k for k in num_1 if k not in num_2})
+print({k: num_1[k] for k in num_1 if k not in num_2})
+
+#### Output:
+## t1. {'x', 'm'}
+## t2. {('m', 12)}
+## t3. {'o', 'a', 'n', 'q', 'r', 's'}
+## t4. {'o', 'a', 's'}
+## t5. {'o': 8, 'a': 5, 's': 7}
+
+# Find out the number of letters and digits from the given alpha-numeric text.
+sample_text = "Learning Journal 2020"
+lst= sample_text.split()
+cnt_l=0
+cnt_d=0
+for i in lst:
+    if i.isalpha():
+        cnt_l= cnt_l + len(i)
+    elif i.isnumeric():
+        cnt_d=cnt_d+len(i)
+print(f'Number of Letters:  {cnt_l}')
+print(f'Number of Digits:  {cnt_d}')
+####  Output:
+# Number of Letters:  15
+# Number of Digits:  4
+
+# We have a list given below. Add an item 200 to the list, after the item 100.
+myList = [2, 8, [10, 20, [40, 60, [90, 100], 30, 70], 80], 50]
+myList[2][2][2].insert(2,200)
+print(myList)
+####  Output:
+# [2, 8, [10, 20, [40, 60, [90, 100, 200], 30, 70], 80], 50]
+
+# We have two sets given below. Print the first set again after removing the elements common to both of these sets.
+set_1 = {2, 8, 19, 13, 24, 55, 48, 93}
+set_2 = {7, 11, 55, 84, 8, 65, 73, 13}
+st_1 = set_1 & set_2
+print(st_1)
+for i in st_1:
+    set_1.remove(i)
+print(set_1)
+
+####  Output: {2, 48, 19, 24, 93}
+
+# Print all the prime numbers between the given range.
+start = 20
+end = 60
+for i in range(20,61):
+    if (i%2!=0) and (i%3!=0) and (i%5!=0) and (i%7!=0):
+        print(i)
+
+#### Output: Prime numbers between 20 and 60 are:
+# 23
+# 29
+# 31
+# 37
+# 41
+# 43
+# 47
+# 53
+# 59
+
+# Here we have a list of 3 letters. I want you to concatenate this list with another list of numbers whose range varies from 1 to 3
+#  (3 is included).\n",
+letters_list = ['H', 'R', 'S']
+lst=[]
+for i in letters_list:
+    for j in range(1,4):
+        lst.append(i+str(j))
+print(lst)
+
+####  Output:
+['H1', 'R1', 'S1', 'H2', 'R2', 'S2', 'H3', 'R3', 'S3']
+
+# Print all the numbers between 1 and 100 (both being included) that are multiples of 3 and 5 both.
+print({x for x in range (1,101) if x%3==0 and x%5==0})
+####  Output Multiples of 3 and 5: [15, 30, 45, 60, 75, 90]
+
+# Here we have a poem by Walt Whitman. I want you to print this poem once again after removing all the vowels from them.
+poem = "Centre of equal daughters, equal sons, All, all alike endeared, grown, ungrown, young or old, Strong, ample, fair, enduring, capable, rich, Perennial with the Earth, with Freedom, Law and Love, A grand, sane, towering, seated Mother, Chaired in the adamant of Time."
+poem_new=''
+for i in poem:
+    if i not in ['a', 'e', 'i','o', 'u']:
+        poem_new= poem_new+i
+print(poem_new)
+
+# Here we have some information about Python programming extracted from Wikipedia.
+#  Find all the occurrences of the word 'python' in the given python_info, ignoring the case.
+
+python_info = "Python is an interpreted, high-level, and general-purpose programming language. Python is dynamically typed and garbage-collected. Python was created in the late 1980s as a successor to the ABC language, Python 2.0. Python 3.0 was released in 2008. A non-profit organization, the Python Software Foundation, manages and directs resources for Python development."
+lst= python_info.split()
+cnt=0
+for i in lst:
+    if i.lower() == 'python':
+        cnt= cnt+1
+print(f'The Python count in python_info is:  {cnt}')
+#### Output: "The 'Python' count in python_info is: 7"
