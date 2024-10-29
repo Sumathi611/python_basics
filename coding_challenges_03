@@ -1,0 +1,126 @@
+# We have two lists given below. I want you to print the first list in the original order and the second list in reverse order simultaneously.
+list_1 = [12, 25, 31, 20, 18]
+list_2 = [11, 9, 43, 22, 55]
+list_3= list_2[::-1]
+for i in range(0,5):
+    print(f'{list_1[i]} {list_3[i]}')
+
+####  Output:
+## 12 55
+## 25 22
+## 31 43
+## 20 9
+## 18 11
+
+# Print today's date in the format given below. Day_name  Day_number  Month_name  Year
+from datetime import *
+curnt_dt = datetime.now()
+print(f'Today\'s  date is : {curnt_dt.strftime('%A')} {curnt_dt.day} {curnt_dt.strftime('%B')} {curnt_dt.year}')
+    
+####  Output: Today date is:  Tuesday 13 October 2020
+
+# We have a string which contains grocery items. Print these items in a comma-separated sequence after sorting them alphabetically.
+
+grocery_items = ' Grated Cheese, Coffee Powder, Pickles, White Chocolate, Dark Chocolate, Eggs, Breads, Milk, Sugar, Salt, Cat Food, Fries'
+grc_list= grocery_items.split(',')
+grc_list.sort()
+grc_items= ','.join(grc_list)
+print (grc_items)
+
+####  Output: Breads, Cat Food, Coffee Powder, Dark Chocolate, Eggs, Fries, Grated Cheese, Milk, Pickles White Chocolate, Salt, Sugar
+
+# Write a Python program to print the dates of yesterday, today, and tomorrow.
+
+print(f'Yesterday : {date.today()- timedelta(days=1)}')
+print(f'Today : {date.today()}')
+print(f'Tomorrow : {date.today()+ timedelta(days=1)}')
+####  Output:
+# Yesterday :  2020-10-12
+# Today :  2020-10-13
+# Tomorrow :  2020-10-14
+
+#  We have a set that contains roll numbers of candidates who have applied for an event. Out of the applied candidates, 
+# few have submitted their application forms, and we have registered their details in a dictionary given below.
+#  Print the roll numbers of the candidates who have submitted their application forms and also the ones who are yet to submit it.
+roll_numbers = {12, 7, 15, 23, 32, 30}
+student_details = {12:'Judy', 30:'Shane', 23:'Aaron'}
+c_set={x for x in roll_numbers if x in student_details.keys()}
+p_set={x for x in roll_numbers if x not in student_details.keys()}
+print(f'Completed Applications: {c_set}')
+print(f'Pending Applications: {p_set}')
+
+#### Output:
+    # Completed Applications:  {12, 30, 23}
+   # Pending Applications:  {32, 15, 7}
+
+# "We have a list of companies with their face values in the stock market. Now, I want to get the company's name along with its face value for the company, 
+# which has the maximum and the minimum face values. I also want you all to sort this list based on face values in increasing order.
+stock_market ={'AXIS BANK' : 7,
+'BHARTI AIRTEL' : 5,
+'COAL INDIA' : 10,
+'ITC' : 1,
+'TCS' : 3,
+'L&T' : 2,
+'RELIANCE' : 9,
+'KOTAK BANK' : 8,
+'AMERICAN EXPRESS' : 11}
+stock_market_min_key = min(stock_market, key=stock_market.get)
+stock_market_min_value=stock_market[stock_market_min_key]
+lst_min=[stock_market_min_value,stock_market_min_key]
+print(lst_min)
+stock_market_max_key = max(stock_market, key=stock_market.get)
+stock_market_max_value=stock_market[stock_market_max_key]
+lst_max=[stock_market_max_value,stock_market_max_key]
+print(lst_max)
+swapped_list =[(value,key) for key, value in stock_market.items()]
+swapped_list.sort()
+print(swapped_list)
+
+# Write a program to print all the numbers between 100 to 300 (both included) such that each digit of the given number is an even number.
+for num in range(100, 301):
+    if all(int(digit) % 2 == 0 for digit in str(num)):
+        print(num, end=" ")
+## output
+### 200, 202, 204, 206, 208, 220, 222, 224, 226, 228, 240, 242, 244, 246, 248, 260, 262, 264, 266, 268, 280, 282, 284, 286, 288
+# We have a list of several names along with their age. Now, there is a meeting where seats are reserved for senior citizens (age - 45 above).
+#  I want to filter out the senior citizens from this list and get a resultant list where we the names of all those who satisfy the criteria.
+
+passenger_list = {'Ross' : 35,
+'Thomas': 42,
+'Rick' : 55,
+'Ericson' : 51,
+'Josh' : 45,
+'Lara' : 50,
+'Emma' : 38,
+'Lily' : 46,
+'Ron' : 41,
+'Michael' : 47,
+'Joanna' : 56,
+'Arthur' : 42}
+lst=[]
+for key, value in passenger_list.items():
+    if value>=45:
+        lst.append(key)
+print(lst)
+
+## output
+## ['Rick', 'Lily', 'Ericson', 'Joanna', 'Michael', 'Lara']
+
+# We have a list given below, which contains several numbers. I want to slice this list based on its indexes, into 3 equal sub-lists.
+num_list = [31, 24, 2, 16, 19, 45, 75, 63, 79]
+length= len(num_list)
+a= length//3
+lst=[]
+start=0
+end=3
+for i in range(1,4):
+    for num in num_list[start: end]:
+        lst. append(num)
+    start+=a
+    end+=a
+    print(f'Sub-List {i} {lst}')
+    lst=[]
+####  Output:
+    #Sub-List  1 [31, 24, 2]
+    #Sub-List  2 [16, 19, 45]
+#   Sub-List  3 [75, 63, 79]
